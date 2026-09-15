@@ -16,7 +16,7 @@ import SearchPage from './pages/SearchPage.tsx'
 import AccountPage from './pages/AccountPage.tsx'
 import LogInPage from './pages/LogInPage.tsx'
 import Register from './pages/Register.tsx'
-import ProfilePage from './pages/ProfilePage.tsx'
+import ProtectedRoute from './routes/ProtectedRoute.tsx'
 
 createRoot(document.getElementById('root')!).render(
     <AuthProvider>
@@ -35,7 +35,7 @@ createRoot(document.getElementById('root')!).render(
                         <Route path='account' element={<AccountPage/>} />
                         <Route path='account/login' element={<LogInPage/>} />
                         <Route path='account/register' element={<Register/>} />
-                        <Route path='profile' element={<ProfilePage/>} />
+                        <Route path='profile' element={<ProtectedRoute />} />
                     </Route>
                 </Routes>
             </BrowserRouter>        

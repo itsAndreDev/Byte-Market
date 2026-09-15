@@ -18,8 +18,7 @@ const CartProvider = ( { children } : Props ) =>{
         localStorage.setItem( USER_CARTS_STORAGE_KEY, JSON.stringify( cartByUser ) )
     }, [ cartByUser ] )
 
-    if( !user) return null
-    const currentCart = cartByUser[ user.id ]?? []
+    const currentCart = user? cartByUser[ user.id ]?? [] : [];
 
     //functions
     const addProductCart =( product : Product)=>{
@@ -35,6 +34,7 @@ const CartProvider = ( { children } : Props ) =>{
     }
 
     const removeProductCart = ( id: number ) =>{
+        if( !user) return
         setCartByUser( prev =>{
             const cart = prev[ user.id  ]
             const updateCart = cart.filter( product => product.id !== id )
@@ -49,6 +49,7 @@ const CartProvider = ( { children } : Props ) =>{
     }
 
     const increaseQuantity= ( id: number ) =>{
+        if( !user) return
         setCartByUser( prev=>{
             const cart= prev[ user.id ]
             const updatedProductQuantity = cart.map( item =>{
@@ -68,6 +69,7 @@ const CartProvider = ( { children } : Props ) =>{
     }   
 
     const decreaseQuantity = ( id: number ) =>{
+        if( !user) return
         setCartByUser( prev=>{
             const cart= prev[ user.id ]
             const updatedProductQuantity = cart.map( item =>{

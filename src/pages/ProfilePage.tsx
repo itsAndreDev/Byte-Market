@@ -5,12 +5,16 @@ import getInitial from "../utils/getInitials";
 import { useState } from "react";
 import { type User } from "../types/user.types";
 
-const ProfilePage = () => {
-    const { user, setUser, setAllUsers } = useAuth();
+type UserProps = {
+    user: User;
+}
+const ProfilePage = ( { user } : UserProps) => {
+    const { setUser, setAllUsers, userLogout } = useAuth();
     const [ isEditing, setIsEditing ] = useState<boolean>( false );
     const [ editedUser, setEditedUser] = useState<User>( user )
     if( !user ) { return null }
     const perfilImages = getInitial( user.name, user.lastName );
+    
     const handleEditing = ()=>{
         if( !isEditing ){
             setIsEditing( true )
@@ -31,6 +35,10 @@ const ProfilePage = () => {
                 )
             ) )
         }
+    }
+
+    const handleLogout = ()=>{
+        userLogout()
     }
 
     const handleChange = ( e: React.ChangeEvent<HTMLInputElement>, name: string ) =>{
@@ -176,7 +184,7 @@ const ProfilePage = () => {
             </section>
 
             <div className="flex justify-end">
-                <button className="cursor-pointer rounded-xl border border-slate-700 bg-slate-900/70 px-5 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-red-400/60 hover:bg-red-950/20 hover:text-red-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/50">Cerrar sesión</button>
+                <button className="cursor-pointer rounded-xl border border-slate-700 bg-slate-900/70 px-5 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-red-400/60 hover:bg-red-950/20 hover:text-red-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/50" onClick={ handleLogout }>Cerrar sesión</button>
             </div>
         </main>
     )
