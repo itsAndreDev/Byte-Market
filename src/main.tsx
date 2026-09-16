@@ -17,11 +17,13 @@ import AccountPage from './pages/AccountPage.tsx'
 import LogInPage from './pages/LogInPage.tsx'
 import Register from './pages/Register.tsx'
 import ProtectedRoute from './routes/ProtectedRoute.tsx'
+import ScrollToTop from './components/ScrollToTop.tsx'
 
 createRoot(document.getElementById('root')!).render(
     <AuthProvider>
         <CartProvider>
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path='/' element= {<MainLayout />}>
                         <Route index element={<Home/>} />
