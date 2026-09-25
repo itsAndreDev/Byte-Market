@@ -1,9 +1,18 @@
 import formatPrice from "../../utils/formatPrice";
 import useCart from "../../hooks/useCart";
 
-const CartSummary = () => {
+type ModalProp = {
+    showModal : ()=> void
+}
+
+const CartSummary = ( { showModal } : ModalProp ) => {
     const { getCartTotal, getDiscount, getShippingCost, getCartSubTotal } = useCart(); 
     const shipping = getShippingCost();
+
+    const handleClick = ()=>{
+        showModal()
+    }
+
     return (
         <section className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-[0_0_30px_rgba(15,23,42,0.35)] sm:p-6">
             <h2 className="text-xl font-semibold text-slate-100">Resumen de compra</h2>
@@ -35,7 +44,7 @@ const CartSummary = () => {
             </div>
 
             <div className="mt-6">
-                <button type="button" className="cursor-pointer w-full rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70">Continuar compra</button>
+                <button type="button" onClick={ handleClick } className="cursor-pointer w-full rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70">Continuar compra</button>
             </div>
         </section>
     );

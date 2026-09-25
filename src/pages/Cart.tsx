@@ -3,11 +3,18 @@ import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import CartItem from "../components/cart/CartItem";
 import { Link } from "react-router-dom";
 import CartSummary from "../components/cart/CartSummary";
+import { useState } from "react";
+import RequiredAddressModal from "../components/modals/RequiredAddressModal";
 
 
 //displays the shopping cart content
 const Cart = () => {
     const { currentCart } = useCart();
+    const [ showRequiredAddressModal, setShowRequiredAddressModal ] = useState<boolean>( false );
+
+    const handleModal = ()=>{
+        setShowRequiredAddressModal( !showRequiredAddressModal )
+    }
 
     const totalProducts = currentCart.length;
 
@@ -68,8 +75,14 @@ const Cart = () => {
                         </div>
 
                         <div className="xl:sticky xl:top-15">
-                            <CartSummary />
+                            <CartSummary 
+                                showModal={ handleModal }
+                            />
                         </div>
+
+                        { 
+                            showRequiredAddressModal && <RequiredAddressModal  showModal={ handleModal }/>
+                        }
                     </section>
                 )
             }

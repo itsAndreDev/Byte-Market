@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import FormInput from "../components/ui/FormInput";
 import useAuth from "../hooks/useAuth";
 import getInitial from "../utils/getInitials";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { type User } from "../types/user.types";
 
 type UserProps = {
@@ -10,9 +10,24 @@ type UserProps = {
 }
 const ProfilePage = ( { user } : UserProps) => {
     const { setUser, setAllUsers, userLogout } = useAuth();
-    const [ isEditing, setIsEditing ] = useState<boolean>( false );
-    const [ editedUser, setEditedUser] = useState<User>( user )
+    const [ editedUser, setEditedUser] = useState<User>( user );
+
+    const location = useLocation();
+    const addressSectionRef = useRef<HTMLElement>( null )
+    const foccusAddress = location.state?.foccusAddress
+
+    const [ isEditing, setIsEditing ] = useState( Boolean( foccusAddress ) );
+
+    useEffect( ()=>{ 
+        if( foccusAddress ){
+            addressSectionRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block : "center"
+            });
+        }
+    }, [ foccusAddress ] )
     if( !user ) { return null }
+
     const perfilImages = getInitial( user.name, user.lastName );
     
     const handleEditing = ()=>{
@@ -127,7 +142,7 @@ const ProfilePage = ( { user } : UserProps) => {
 
             </section>
 
-            <section className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5 shadow-[0_0_30px_rgba(15,23,42,0.3)] sm:p-6">
+            <section ref={ addressSectionRef } className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5 shadow-[0_0_30px_rgba(15,23,42,0.3)] sm:p-6">
                 <div className="mb-5 border-b border-slate-800 pb-4">
                     <h2 className="text-xl font-semibold text-slate-100">Dirección de envío</h2>
                     <p className="mt-1 text-sm text-slate-400">Guarda una dirección para agilizar tus próximas compras.</p>
