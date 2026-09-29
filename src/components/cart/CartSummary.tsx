@@ -1,16 +1,27 @@
 import formatPrice from "../../utils/formatPrice";
 import useCart from "../../hooks/useCart";
+import useAuth from "../../hooks/useAuth";
+import isEmptyFields from "../../utils/isEmptyFields";
+import { useNavigate } from "react-router-dom";
 
 type ModalProp = {
     showModal : ()=> void
 }
 
 const CartSummary = ( { showModal } : ModalProp ) => {
+    const navigation  = useNavigate();
     const { getCartTotal, getDiscount, getShippingCost, getCartSubTotal } = useCart(); 
     const shipping = getShippingCost();
+    const { user } = useAuth();
 
     const handleClick = ()=>{
-        showModal()
+        if( !user){ return }
+        
+        if( isEmptyFields( user.shippingAddress ) ){
+            showModal()
+        }else {
+            navigation( "/checkout")
+        }
     }
 
     return (
