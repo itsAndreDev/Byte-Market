@@ -112,6 +112,70 @@
 
   },
 
+  "checkout": {
+    "eyebrow": "Byte Market",
+    "title": "Finalizar compra",
+    "subtitle": "Revisa la entrega y elige cómo quieres pagar tu pedido.",
+    "paymentEyebrow": "Pago",
+    "paymentTitle": "Método de pago",
+    "sidebarLabel": "Resumen y confirmación del pedido",
+    "placeOrder": "Realizar pedido",
+    "reviewHint": "Revisa tus datos antes de confirmar el pedido.",
+    "selectMethod": "Selecciona un método de pago",
+    "methods": {
+      "yape": "Yape",
+      "yapeDescription": "Paga desde tu billetera digital.",
+      "card": "Tarjeta",
+      "cardDescription": "Crédito o débito.",
+      "cash": "Contraentrega",
+      "cashDescription": "Paga cuando recibas tu pedido."
+    },
+    "address": {
+      "eyebrow": "Entrega",
+      "title": "Dirección de envío",
+      "address": "Dirección",
+      "city": "Ciudad",
+      "country": "País"
+    },
+    "card": {
+      "title": "Datos de la tarjeta",
+      "description": "Ingresa los datos que aparecen en tu tarjeta.",
+      "number": "Número de tarjeta",
+      "holder": "Nombre del titular",
+      "holderPlaceholder": "Como aparece en la tarjeta",
+      "expiration": "Vencimiento",
+      "testData": "Usar datos de prueba"
+    },
+    "yape": {
+      "title": "Paga con Yape",
+      "description": "Ingresa tu número y prepara la confirmación de tu pago.",
+      "phone": "Número de teléfono",
+      "simulationTitle": "Simulación de pago",
+      "simulationDescription": "Aquí aparecerá el código de operación y el estado del pago.",
+      "operationCode": "Código de operación",
+      "pending": "Pendiente",
+      "status": "Estado",
+      "paymentPending": "Pago pendiente",
+      "simulateButton": "Simular pago con Yape"
+    },
+    "summary": {
+      "title": "Resumen del pedido",
+      "products": "Productos",
+      "subtotal": "Subtotal",
+      "discount": "Descuentos",
+      "shipping": "Costo de envío",
+      "total": "Total"
+    }
+  },
+  "orderConfirmation": {
+    "eyebrow": "Confirmación del pedido",
+    "title": "¡Pedido realizado correctamente!",
+    "subtitle": "Gracias por comprar en Byte Market. Aquí encontrarás el resumen de tu pedido.",
+    "detailsTitle": "Detalles del pedido",
+    "paymentMethod": "Método de pago",
+    "operationCode": "Código de operación",
+    "continueShopping": "Volver al catálogo"
+  },
   "footer": {
         "brand": {
             "name": "Byte Market",

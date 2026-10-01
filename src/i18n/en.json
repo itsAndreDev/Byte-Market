@@ -116,6 +116,70 @@
 
   },
 
+  "checkout": {
+    "eyebrow": "Byte Market",
+    "title": "Checkout",
+    "subtitle": "Review your delivery details and choose how you want to pay.",
+    "paymentEyebrow": "Payment",
+    "paymentTitle": "Payment method",
+    "sidebarLabel": "Order summary and confirmation",
+    "placeOrder": "Place order",
+    "reviewHint": "Review your details before confirming your order.",
+    "selectMethod": "Select a payment method",
+    "methods": {
+      "yape": "Yape",
+      "yapeDescription": "Pay with your digital wallet.",
+      "card": "Card",
+      "cardDescription": "Credit or debit.",
+      "cash": "Cash on delivery",
+      "cashDescription": "Pay when your order arrives."
+    },
+    "address": {
+      "eyebrow": "Delivery",
+      "title": "Shipping address",
+      "address": "Address",
+      "city": "City",
+      "country": "Country"
+    },
+    "card": {
+      "title": "Card details",
+      "description": "Enter the details shown on your card.",
+      "number": "Card number",
+      "holder": "Cardholder name",
+      "holderPlaceholder": "As shown on the card",
+      "expiration": "Expiration date",
+      "testData": "Use test data"
+    },
+    "yape": {
+      "title": "Pay with Yape",
+      "description": "Enter your phone number to prepare your payment confirmation.",
+      "phone": "Phone number",
+      "simulationTitle": "Payment simulation",
+      "simulationDescription": "The operation code and payment status will appear here.",
+      "operationCode": "Operation code",
+      "pending": "Pending",
+      "status": "Status",
+      "paymentPending": "Payment pending",
+      "simulateButton": "Simulate Yape payment"
+    },
+    "summary": {
+      "title": "Order summary",
+      "products": "Products",
+      "subtotal": "Subtotal",
+      "discount": "Discounts",
+      "shipping": "Shipping",
+      "total": "Total"
+    }
+  },
+  "orderConfirmation": {
+    "eyebrow": "Order confirmation",
+    "title": "Your order was placed successfully!",
+    "subtitle": "Thanks for shopping at Byte Market. Here is your order summary.",
+    "detailsTitle": "Order details",
+    "paymentMethod": "Payment method",
+    "operationCode": "Operation code",
+    "continueShopping": "Back to catalog"
+  },
   "footer": {
     
         "brand": {

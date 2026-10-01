@@ -19,6 +19,7 @@ import Register from './pages/Register.tsx'
 import ProtectedRoute from './routes/ProtectedRoute.tsx'
 import ScrollToTop from './components/ScrollToTop.tsx'
 import CheckoutPage from './pages/CheckoutPage.tsx'
+import OrderConfirmationPage from './pages/OrderConfirmationPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
     <AuthProvider>
@@ -40,6 +41,7 @@ createRoot(document.getElementById('root')!).render(
                         <Route path='account/register' element={<Register/>} />
                         <Route path='profile' element={<ProtectedRoute />} />
                         <Route path='checkout' element={<CheckoutPage />} />
+                        <Route path='order-confirmation' element={<OrderConfirmationPage />} />
                     </Route>
                 </Routes>
             </BrowserRouter>        
