@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import CheckoutOrderSummary from "../components/checkout/CheckoutOrderSummary";
+import OrderSummary from "../components/cart/OrderSummary";
 import PaymentMethodSelector from "../components/checkout/PaymentMethodSelector";
 import ShippingAddress, { type ShippingAddressData } from "../components/checkout/ShippingAddress";
 import YapePaymentForm from "../components/checkout/YapePaymentForm";
@@ -122,7 +122,7 @@ const CheckoutPage = () => {
             </div>
 
             <aside className="space-y-4 lg:sticky lg:top-24" aria-label={t("checkout.sidebarLabel")}>
-                <CheckoutOrderSummary />
+                <OrderSummary />
                 <button type="button" onClick={ handlePlaceOrder } className="w-full cursor-pointer rounded-xl bg-cyan-400 px-5 py-3.5 text-sm font-bold text-slate-950 shadow-[0_14px_30px_rgba(34,211,238,0.18)] transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70">{t("checkout.placeOrder")}</button>
                 <p className="text-center text-xs leading-5 text-slate-500">{t("checkout.reviewHint")}</p>
             </aside>

@@ -12,6 +12,7 @@ type CartContextType = {
     getDiscount: ( ) => number;
     getShippingCost: ()=> number;
     getCartTotal: ()=> number;
+    totalItems: number
 }
 
 const CartContext = createContext<CartContextType | null>( null );

@@ -116,9 +116,13 @@ const CartProvider = ( { children } : Props ) =>{
         return ( subTotal - discount ) + shipping
     }
 
+    const totalItems =currentCart.reduce( ( acc, item )=>{
+        return acc + item.quantity
+    }, 0 )
     
+    useEffect( ()=>{ console.log( totalItems )}, [ totalItems] )
     return(
-        <CartContext.Provider value={{ currentCart, cartByUser, addProductCart, removeProductCart, increaseQuantity, decreaseQuantity, getCartSubTotal, getDiscount, getShippingCost, getCartTotal } }>
+        <CartContext.Provider value={{ currentCart, cartByUser, addProductCart, removeProductCart, increaseQuantity, decreaseQuantity, getCartSubTotal, getDiscount, getShippingCost, getCartTotal, totalItems } }>
             { children }
         </CartContext.Provider>
     )

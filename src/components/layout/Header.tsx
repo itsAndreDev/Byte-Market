@@ -9,7 +9,7 @@ import useAuth from "../../hooks/useAuth";
 const Header = () => {
     const { t  } = useTranslation();
     const  toggleLanguage = useLanguage();
-    const { currentCart } = useCart();
+    const { totalItems } = useCart();
     const { user } = useAuth();
     const isUserDesconnected = user === null
     return (
@@ -48,7 +48,7 @@ const Header = () => {
                     <Link to={ "/cart" }>
                         <button type="button" className="cursor-pointer relative inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-700 bg-slate-900 text-slate-100 transition hover:border-cyan-400/50 hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70"aria-label="Open cart">
                             <IoCartOutline className="text-lg" />
-                            <span className="absolute -right-1.5 -top-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-cyan-400 px-1 text-[10px] font-bold text-slate-950">{ currentCart.length }</span>
+                            <span className="absolute -right-1.5 -top-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-cyan-400 px-1 text-[10px] font-bold text-slate-950">{ totalItems }</span>
                         </button>
                     </Link>
 

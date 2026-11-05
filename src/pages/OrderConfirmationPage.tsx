@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import CheckoutOrderSummary from "../components/checkout/CheckoutOrderSummary";
+import OrderSummary from "../components/cart/OrderSummary";
 
 const OrderConfirmationPage = () => {
   const { t } = useTranslation();
@@ -44,7 +44,7 @@ const OrderConfirmationPage = () => {
       </section>
 
       <div className="space-y-4">
-        <CheckoutOrderSummary />
+        <OrderSummary />
         <button
           type="button"
           className="w-full cursor-pointer rounded-xl bg-cyan-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70"
